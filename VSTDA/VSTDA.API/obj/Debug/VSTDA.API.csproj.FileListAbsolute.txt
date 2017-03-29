@@ -48,3 +48,4 @@ C:\Users\SCali\dev\15-VSTDA-API\VSTDA\VSTDA.API\obj\Debug\VSTDA.API.dll
 C:\Users\SCali\dev\15-VSTDA-API\VSTDA\VSTDA.API\obj\Debug\VSTDA.API.pdb
 C:\Users\SCali\dev\15-VSTDA-API\VSTDA\VSTDA.API\obj\Debug\VSTDA.API.Migrations.InitialCreate.resources
 C:\Users\SCali\dev\15-VSTDA-API\VSTDA\VSTDA.API\obj\Debug\VSTDA.API.csproj.GenerateResource.Cache
+C:\Users\SCali\dev\15-VSTDA-API\VSTDA\VSTDA.API\obj\Debug\VSTDA.API.Migrations.AddedToModel.resources

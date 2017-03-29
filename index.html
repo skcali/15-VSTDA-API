@@ -1,55 +1,61 @@
 <!doctype html>
 <html lang="en" ng-app="app">
+
 <head>
-  <meta charset="utf-8">
-  <title>Very Simple Todo App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
+    <meta charset="utf-8">
+    <title>Very Simple Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js">
 </head>
+
 <body ng-controller="TodoController as todoCtrl">
-  <div class="container-fluid">
-    <div class="col-md-3">
-      <div class="panel panel-success top-buffer">
-        <div class="panel-heading">Add todo item</div>
-        <div class="panel-body">
-          <div class="form-group">
-            <label>Text:</label>
-            <input ng-model="todoCtrl.todoName" type="text" class="form-control" />
-          </div>
-          <div class="form-group">
-            <label>Priority:</label>
-            <select class="form-control" ng-model="todoCtrl.priority" ng-options="priority[0] for priority in todoCtrl.priorities">
+    <div class="container-fluid">
+        <div class="col-md-3">
+            <div class="panel panel-success top-buffer">
+                <div class="panel-heading">Add todo item</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Text:</label>
+                        <input ng-model="todoCtrl.todoName" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Priority:</label>
+                        <select class="form-control" ng-model="todoCtrl.priority" ng-options="priority[0] for priority in todoCtrl.priorities">
               <option value="" selected disabled>Please select...</option>
             </select>
-          </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success" ng-click="todoCtrl.addTodo()">Add Item</button>
+                </div>
+            </div>
         </div>
-        <div class="panel-footer">
-          <button type="button" class="btn btn-success" ng-click="todoCtrl.addTodo()">Add Item</button>
+        <div class="btn-group col-md-9 top-buffer" role="group" aria-label="...">
+            <div class="row">
+                <div class="col-md-9">
+                    <button type="button" class="btn btn-danger" ng-click="todoCtrl.byHigh()">Order by highest priority</button>
+                    <button type="button" class="btn btn-success" ng-click="todoCtrl.byLow()">Order by lowest priority</button>
+                    <button type="button" class="btn btn-info" ng-click="todoCtrl.byAlphabet()">Order alphabetically</button>
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-md-9">
+                    <ul class="list-group">
+                        <li ng-repeat="todo in todoCtrl.todos | orderBy: todoCtrl.order" class={{todo.style}}>{{todo.todoName}}
+                            <button ng-click="todoCtrl.deleteTodo(todo)" class="btn btn-default btn-xs pull-right">Delete Item</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="btn-group col-md-9 top-buffer" role="group" aria-label="...">
-      <div class="row">
-        <div class="col-md-9">
-          <button type="button" class="btn btn-danger" ng-click="todoCtrl.byHigh()">Order by highest priority</button>
-          <button type="button" class="btn btn-success" ng-click="todoCtrl.byLow()">Order by lowest priority</button>
-          <button type="button" class="btn btn-info" ng-click="todoCtrl.byAlphabet()">Order alphabetically</button>
-        </div>
-      </div>
-      <div class="row top-buffer">
-        <div class="col-md-9">
-          <ul class="list-group">
-            <li ng-repeat="todo in todoCtrl.todos | orderBy: todoCtrl.order" class={{todo[2]}}>{{todo[0]}}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-  <script src="js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="app/todo/todo.controller.js"></script>
+    <script src="app/todo/todo.factory.js"></script>
 </body>
+
 </html>

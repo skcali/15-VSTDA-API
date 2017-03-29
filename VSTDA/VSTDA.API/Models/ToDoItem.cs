@@ -10,5 +10,6 @@ namespace VSTDA.API.Models
         public int TodoItemId { get; set; }
         public string TodoName { get; set; }
         public string Priority { get; set; }
+        public string Style { get; set; }
     }
 }

@@ -139,6 +139,10 @@
     <Compile Include="Migrations\201703292031162_InitialCreate.Designer.cs">
       <DependentUpon>201703292031162_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703292148100_AddedToModel.cs" />
+    <Compile Include="Migrations\201703292148100_AddedToModel.Designer.cs">
+      <DependentUpon>201703292148100_AddedToModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\TodoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,6 +165,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703292031162_InitialCreate.resx">
       <DependentUpon>201703292031162_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703292148100_AddedToModel.resx">
+      <DependentUpon>201703292148100_AddedToModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
