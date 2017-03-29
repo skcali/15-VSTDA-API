@@ -1,0 +1,26 @@
+{
+  "name": "vstdl",
+  "version": "1.0.0",
+  "description": "todolist",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "todolist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skcali/VSTDA.git"
+  },
+  "keywords": [
+    "gittodolist"
+  ],
+  "author": "sean cali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skcali/VSTDA/issues"
+  },
+  "homepage": "https://github.com/skcali/VSTDA#readme"
+}
